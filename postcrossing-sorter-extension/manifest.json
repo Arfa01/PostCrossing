@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Postcrossing Tab Sorter",
+  "version": "1.0",
+  "description": "Sorts all open Postcrossing tabs by postcard ID (e.g., CL-34269, CN-4087990, US-11797804).",
+  "permissions": ["tabs"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Sort Postcrossing Tabs"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
