@@ -35,6 +35,12 @@ API Endpoints:
 4. Mark postcard as received and trigger reciprocal postcard: /api/postcards/receive/:postcardId
 
 
+5. GET /api/users/debug/all
+6. GET /api/postcards/debug/all
+7. GET /api/send_requests/debug/all
+8. /api/userstats/
+
+
 Sample:
 
 send a postcard

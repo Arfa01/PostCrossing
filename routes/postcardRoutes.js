@@ -161,4 +161,25 @@ router.get('/stats/:userId', async (req, res) => {
   }
 });
 
+
+
+// utility GET (Gets all postcards with populated sender and receiver - for debugging)
+router.get("/debug/all", async (req, res) => {
+  try {
+    const postcards = await Postcard.find()
+      .populate("sender", "username country")
+      .populate("receiver", "username country")
+      .lean();
+
+    res.status(200).json({
+      total: postcards.length,
+      postcards,
+    });
+  } catch (error) {
+    console.error("Error fetching all postcards:", error);
+    res.status(500).json({ message: "Error fetching postcards", error });
+  }
+});
+
+
 export default router;

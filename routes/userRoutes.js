@@ -37,4 +37,27 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+
+
+
+
+// utility GET (gets all users with stats populated, for debugging)
+router.get("/debug/all", async (req, res) => {
+  try {
+    const users = await User.find().lean();
+    const stats = await UserStats.find().populate("user", "username email country").lean();
+
+    res.status(200).json({
+      usersCount: users.length,
+      statsCount: stats.length,
+      users,
+      stats,
+    });
+  } catch (error) {
+    console.error("Error fetching debug users:", error);
+    res.status(500).json({ message: "Error fetching debug users", error });
+  }
+});
+
+
 export default router;

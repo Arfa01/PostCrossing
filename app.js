@@ -4,6 +4,9 @@ import dotenv from "dotenv";
 import userRoutes from "./routes/userRoutes.js";
 import postcardRoutes from "./routes/postcardRoutes.js";
 import sendRequestRoutes from "./routes/sendRequestRoutes.js";
+import userStatsRoutes from "./routes/userStatsRoutes.js";
+
+
 
 
 dotenv.config();
@@ -30,6 +33,7 @@ app.get("/", (req, res) => {
 app.use("/api/users", userRoutes);
 app.use("/api/postcards", postcardRoutes);
 app.use("/api/send_requests", sendRequestRoutes);
+app.use("/api/userstats", userStatsRoutes);
 
 
 // Start server

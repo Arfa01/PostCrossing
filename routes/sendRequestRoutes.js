@@ -99,4 +99,25 @@ router.post("/", async (req, res) => {
   }
 });
 
+
+
+// Utility GET (gets all send requests for debugging, confirms send requests were created and linked)
+router.get("/debug/all", async (req, res) => {
+  try {
+    const requests = await SendRequest.find()
+      .populate("requester", "username country")
+      .populate("assignedRecipient", "username country")
+      .lean();
+
+    res.status(200).json({
+      total: requests.length,
+      requests,
+    });
+  } catch (error) {
+    console.error("Error fetching all send requests:", error);
+    res.status(500).json({ message: "Error fetching send requests", error });
+  }
+});
+
+
 export default router;
