@@ -81,33 +81,6 @@ Browser Extension : Chrome (for tab sorting functionality)
 
 
 
-## Sample Request
-
-### Send a Postcard
-
-**Request**
-```json
-POST /api/postcards/send
-{
-  "senderId": "68f49f06466d3fe9219b227a",
-  "receiverId": "68f49ba9466d3fe9219b225b",
-  "message": "I'm sending you this from Mexico!",
-  "imageUrl": "https://placehold.co/600x400?text=Postcard",
-  "fromCountry": "Mexico",
-  "toCountry": "Pakistan"
-}
-
-**Response**
-
-```json
-{
-  "postcardCode": "ME-3023991",
-  "sender": "68f49f06466d3fe9219b227a",
-  "receiver": "68f49ba9466d3fe9219b225b",
-  "status": "traveling",
-  "message": "I'm sending you this from Mexico!"
-}
-
 ## Project Setup
 1️. Clone the repository
 git clone https://github.com/yourusername/postcrossing.git
