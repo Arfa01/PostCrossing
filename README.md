@@ -58,27 +58,30 @@ Browser Extension : Chrome (for tab sorting functionality)
 ## API Endpoints
 
 ### User Routes
-
-POST | `/api/users/register` | Register a new user 
-GET | `/api/users` | Get all registered users 
+| Method | Endpoint | Description |
+|---------|-----------|-------------|
+| POST | `/api/users/register` | Register a new user |
+| GET | `/api/users` | Get all registered users |
 
 ### Postcard Routes
+| Method | Endpoint | Description |
+|---------|-----------|-------------|
+| POST | `/api/postcards/send` | Send a postcard |
+| GET | `/api/postcards/travelling/:userId` | View all postcards a user has sent (still travelling) |
+| GET | `/api/postcards/received/:userId` | View all postcards a user has received |
+| PATCH | `/api/postcards/receive/:postcardId` | Mark a postcard as received & trigger a reciprocal postcard |
 
-POST | `/api/postcards/send` | Send a postcard |
-GET | `/api/postcards/travelling/:userId` | View all postcards a user has sent (still travelling) |
-GET | `/api/postcards/received/:userId` | View all postcards a user has received |
-post | `/api/postcards/receive/:postcardId` | Mark a postcard as received & trigger a reciprocal postcard |
-
-### Debuging routes
-All are GET:
-`/api/users/debug/all` | View all users (for debugging) |
-`/api/postcards/debug/all` | View all postcards |
-`/api/send_requests/debug/all` | View all send requests |
-`/api/userstats` | View all user statistics |
+### Debug Routes
+| Endpoint | Description |
+|-----------|-------------|
+| `/api/users/debug/all` | View all users (for debugging) |
+| `/api/postcards/debug/all` | View all postcards |
+| `/api/send_requests/debug/all` | View all send requests |
+| `/api/userstats` | View all user statistics |
 
 
 
-## example request
+## Sample Request
 
 ### Send a Postcard
 
@@ -94,7 +97,9 @@ POST /api/postcards/send
   "toCountry": "Pakistan"
 }
 
-Response:
+**Response**
+
+```json
 {
   "postcardCode": "ME-3023991",
   "sender": "68f49f06466d3fe9219b227a",
@@ -103,8 +108,34 @@ Response:
   "message": "I'm sending you this from Mexico!"
 }
 
+## Project Setup
+1️. Clone the repository
+git clone https://github.com/yourusername/postcrossing.git
+cd postcrossing
 
+2️. Install dependencies
+npm install
 
+3️. Create .env file
+MONGO_URI=your_mongodb_connection_string
+PORT=5000
+
+4️. Run the server
+nodemon app.js
+
+You should see
+🚀 Server running on port 5000
+✅ MongoDB connected
+
+## PostCrossing tab sorter extension
+
+(My extension works on Chrome, to use it on Firefox simple edit the version in manifest file.)
+i. Click Extentions' icon in your browser
+ii. Go to Manage extensions
+iii. Turn on Dev Mode
+iv. Load the postcrossing-sorter-extension folder
+v. Extension added. Enjoy. (Make sure Service Worker is not inactive in Manage Extensions)
 
 Author : Arfa Riaz
 COMSATS University Islamabad, Lahore
+October 2025
